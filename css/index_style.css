@@ -21,15 +21,12 @@ body {
     font-size: 45px;
     text-align: center;
     margin-top: 15px;
-    margin-bottom: 30px;
 }
 
 .left-panel {
     flex: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    padding: 20px;
     align-items: flex-start; /* 패널을 왼쪽에 정렬 */
 }
 
@@ -79,7 +76,6 @@ body {
     align-items: center;
     width: 200px; /* 원하는 크기로 조정 */
     height: 200px;
-    margin-bottom: 15px; /* 아이콘과 텍스트 사이 간격 조정 */
 }
 
 .right-panel {
@@ -93,7 +89,7 @@ body {
     flex: 1; /* 동일한 크기로 설정 */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .drop-zone {
@@ -131,7 +127,7 @@ body {
 }
 
 .number-zone span {
-    font-size: 50px;
+    font-size: 100px;
     color: black;
     text-align: center;
 }
