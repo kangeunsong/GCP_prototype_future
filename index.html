@@ -100,6 +100,18 @@
     <div class="popup" id="popup">
     </div>
 
+    <div class="circle-container">
+        <div class="circle circle-1" onclick="navigateTo('index.html')">1</div>
+        <div class="circle circle-2" onclick="navigateTo('second.html')">2</div>
+    </div>
+
+    <div class="popup" id="popup"></div>
+
     <script src="index_script.js"></script>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
 </body>
 </html>
