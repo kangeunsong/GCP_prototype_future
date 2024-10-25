@@ -57,13 +57,16 @@ function showPopup(topic) {
             <p id="target">${topic}!</p>
         </div>
     `;
-    
-    // 팝업을 닫는 클릭 이벤트 추가
-    popup.addEventListener("click", closePopup);
-    
+
+    // 화면 어디든 클릭하면 gamification.html로 이동
+    popup.addEventListener("click", () => {
+        window.location.href = 'gamification.html';
+    });
+
     document.body.appendChild(popup);
     popup.style.display = 'flex';
 }
+
 
 function closePopup() {
     const popup = document.querySelector('.popup');
