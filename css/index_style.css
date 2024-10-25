@@ -29,7 +29,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 200px);
     align-items: flex-start;
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
 .icon {
@@ -52,8 +52,8 @@ body {
 }
 
 .icon img {
-    width: 100px !important;
-    height: 100px !important;
+    width: 110px !important;
+    height: 110px !important;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -87,6 +87,7 @@ body {
     margin-top: 20px;
     display: flex; /* 수평 배치 */
     gap: 15px;
+    margin-right: 150px;
 }
 
 .number, .drop {
