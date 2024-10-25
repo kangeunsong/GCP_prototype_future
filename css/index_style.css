@@ -13,6 +13,8 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start; 
 }
 
 .title{
@@ -28,13 +30,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     padding: 20px;
+    align-items: flex-start; /* 패널을 왼쪽에 정렬 */
 }
 
 .icon {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: center; /* 아이콘과 텍스트를 수직 중앙에 정렬 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
     cursor: pointer;
     height: 200px;
 }
@@ -101,8 +104,8 @@ body {
     align-items: center;
     justify-content: left;
     font-size: 20px;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     color: gray;
     position: relative;
 }
@@ -118,8 +121,8 @@ body {
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: center; /* 수평 중앙 정렬 */
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     position: relative;
 }
 
@@ -137,8 +140,8 @@ body {
     transform: translate(-50%, -50%);
     background: white;
     padding: 20px;
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    height: 450px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     border-radius: 20px;
