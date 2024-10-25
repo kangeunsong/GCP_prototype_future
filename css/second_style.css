@@ -8,10 +8,12 @@ body {
     height: auto;
 }
 
-.title{
-    font-size: 45px;
+#title{
+    font-size: 90px;
     text-align: center;
+    font-weight: 700;
     margin-top: 15px;
+    margin-bottom: 50px;
 }
 
 .roulette-container {
@@ -46,19 +48,18 @@ body {
 
 .pointer {
     position: absolute;
-    top: -20px; /* 포인터를 더 위로 올려 배경과 겹치게 설정 */
+    top: 0px;
     width: 30px;
     height: 60px;
-    background-color: #FFD700;
+    background-color: #ff00f2;
     clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
     z-index: 1;
-    transform: rotate(180deg); /* 상하반전 */
 }
 
 
 .roulette-text {
     position: absolute;
-    font-size: 18px;
+    font-size: 40px;
     font-weight: 700;
     color: black;
     z-index: 2;
@@ -69,27 +70,27 @@ body {
 
 /* 각 섹션에 맞는 텍스트 회전 */
 #family {
-    transform: translate(-125px, 80px) rotate(30deg);
+    transform: translate(-155px, 140px) rotate(30deg);
 }
 
 #friends {
-    transform: translate(-250px, -140px) rotate(90deg);
+    transform: translate(-300px, -135px) rotate(90deg);
 }
 
 #fitness {
-    transform: translate(-125px, -355px) rotate(150deg);
+    transform: translate(-145px, -390px) rotate(150deg);
 }
 
 #fun {
-    transform: translate(127px, -357px) rotate(210deg);
+    transform: translate(150px, -390px) rotate(210deg);
 }
 
 #school {
-    transform: translate(250px, -135px) rotate(270deg);
+    transform: translate(300px, -122px) rotate(270deg);
 }
 
 #home {
-    transform: translate(125px, 80px) rotate(330deg);
+    transform: translate(150px, 130px) rotate(330deg);
 }
 
 .center-circle {
