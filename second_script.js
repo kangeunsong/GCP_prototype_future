@@ -9,7 +9,9 @@ function spin() {
 
     setTimeout(() => {
         const selectedTopic = getSelectedTopic();
-        showPopup(selectedTopic);
+        if (selectedTopic) { // selectedTopic이 유효할 때만 showPopup 호출
+            showPopup(selectedTopic);
+        }
     }, 4000); // 회전 종료 후 팝업 표시
 }
 
