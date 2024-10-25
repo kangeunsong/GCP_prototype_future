@@ -18,10 +18,10 @@ body {
 }
 
 .title{
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .left-panel {
@@ -51,9 +51,8 @@ body {
 }
 
 .icon img {
-    width: 150px !important;
-    height: 150px !important;
-    margin-bottom: 10px;
+    width: 100px !important;
+    height: 100px !important;
     transition: transform 0.2s ease-in-out;
 }
 
