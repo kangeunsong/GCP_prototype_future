@@ -27,8 +27,9 @@ body {
 .left-panel {
     flex: 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: flex-start; /* 패널을 왼쪽에 정렬 */
+    grid-template-columns: repeat(3, 200px);
+    align-items: flex-start;
+    margin-left: 50px;
 }
 
 .icon {
@@ -37,6 +38,7 @@ body {
     align-items: center; /* 아이콘과 텍스트를 수직 중앙에 정렬 */
     text-align: center; /* 텍스트를 중앙 정렬 */
     cursor: pointer;
+    width: 120px;
     height: 200px;
 }
 
@@ -100,8 +102,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     color: gray;
     position: relative;
 }
@@ -122,8 +124,8 @@ body {
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: center; /* 수평 중앙 정렬 */
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     position: relative;
 }
 
