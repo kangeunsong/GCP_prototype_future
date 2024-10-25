@@ -8,12 +8,70 @@ body {
     height: auto;
 }
 
-#title{
+#title {
     font-size: 90px;
     text-align: center;
     font-weight: 700;
     margin-top: 15px;
     margin-bottom: 50px;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1 !important;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    animation: bounceIn 0.6s ease;
+    display: flex;
+    flex-direction: column; /* 위아래로 정렬 */
+    align-items: center;
+    justify-content: center; /* 수직 중앙 정렬 */
+}
+
+#base {
+    margin: 0px;
+    margin-bottom: 15px;
+    font-size: 40px
+}
+
+#target {
+    margin: 0px;
+    margin-top: 15px;
+    font-size: 80px;
+    font-weight: 700;
 }
 
 .roulette-container {
