@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Talk About Your Dreams</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/second_style.css">
+</head>
+<body>
+    <h1>Let's talk about your dreams!</h1>    
+    <div class="roulette-container">
+        <div class="pointer"></div>
+        <div class="roulette" id="roulette">
+            <div class="center-circle"></div>
+            <div class="roulette-text" id="family">family</div>
+            <div class="roulette-text" id="friends">friends</div>
+            <div class="roulette-text" id="fitness">fitness</div>
+            <div class="roulette-text" id="fun">fun</div>
+            <div class="roulette-text" id="school">school</div>
+            <div class="roulette-text" id="home">home</div>
+        </div>        
+    </div>
+
+    <div class="circle-container">
+        <div class="circle circle-1" onclick="navigateTo('index.html')">1</div>
+        <div class="circle circle-2" onclick="navigateTo('second.html')">2</div>
+    </div>
+
+    <button onclick="spin()">Spin the Wheel</button>
+
+    <script src="./second_script.js"></script>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

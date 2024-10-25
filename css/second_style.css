@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Neue', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.roulette-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roulette {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(     
+        #FFE88B 0deg 60deg,
+        #A6D0F1 60deg 120deg,
+        #FFC16E 120deg 180deg,
+        #BCEEA5 180deg 240deg,
+        #E26868 240deg 300deg,
+        #dfa9ff 300deg 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0deg);
+    transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.pointer {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 60px;
+    background-color: #FFD700;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 1;
+}
+
+.roulette-text {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    z-index: 2;
+    width: 100px; /* 텍스트의 영역 확보 */
+    text-align: center;
+    transform-origin: center 150px; /* 회전 축을 섹션 끝 쪽으로 조정 */
+}
+
+/* 각 섹션에 맞는 텍스트 회전 */
+#family {
+    transform: translate(-125px, 80px) rotate(30deg);
+}
+
+#friends {
+    transform: translate(-250px, -140px) rotate(90deg);
+}
+
+#fitness {
+    transform: translate(-125px, -355px) rotate(150deg);
+}
+
+#fun {
+    transform: translate(127px, -357px) rotate(210deg);
+}
+
+#school {
+    transform: translate(250px, -135px) rotate(270deg);
+}
+
+#home {
+    transform: translate(125px, 80px) rotate(330deg);
+}
+
+.center-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #555;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.number-circle {
+    position: absolute;
+    left: -40px;
+    top: 60px;
+    width: 60px;
+    height: 60px;
+    background-color: #6B8E23;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.circle-container {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+.circle {
+    width: 50px;
+    height: 100px;
+    border-radius: 50px 0 0 50px;
+    background-color: #3498db;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
