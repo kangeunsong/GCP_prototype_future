@@ -1,12 +1,20 @@
 /* Basic styling */
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    font-family: 'Comic Neue', sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    height: auto;
+}
+
+#title {
+    font-size: 90px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 50px;
 }
 
 .container {
@@ -38,7 +46,7 @@ body {
 #fish {
     position: absolute;
     width: 50px;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     transition: bottom 0.3s ease;
