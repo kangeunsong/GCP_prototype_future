@@ -1,8 +1,8 @@
-let waterLevel = 20; 
-let fishPosition = 10; 
+let waterLevel = 40; 
+let fishPosition = 0; 
 const maxWaterLevel = 90;
-const waterIncrement = 10;
-const fishRiseSpeed = 30;
+const waterIncrement = 25;
+const fishRiseSpeed = 25;
 
 window.onload = function () {
     const params = new URLSearchParams(window.location.search);
@@ -10,6 +10,40 @@ window.onload = function () {
     const titleElement = document.getElementById("title");
     titleElement.textContent = `Let's talk about your ${selectedTopic}!`;
 };
+
+function startVoiceInput() {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Your browser does not support Speech Recognition.");
+        return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US'; // 사용할 언어 설정
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => {
+        console.log("Voice recognition started.");
+    };
+
+    recognition.onresult = (event) => {
+        const memoInput = document.getElementById("memo-input");
+        const transcript = event.results[0][0].transcript;
+        memoInput.value = transcript;
+        console.log("Voice input received:", transcript);
+        submitMemo(); // 텍스트가 감지되면 자동으로 메모 추가
+    };
+
+    recognition.onerror = (event) => {
+        console.error("Voice recognition error:", event.error);
+    };
+
+    recognition.onend = () => {
+        console.log("Voice recognition ended.");
+    };
+
+    recognition.start();
+}
 
 function submitMemo() {
     const memoInput = document.getElementById("memo-input");

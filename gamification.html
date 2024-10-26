@@ -15,8 +15,8 @@
             <img src="./images/fish.png" alt="Fish" id="fish">
         </div>
         <div class="memo-section">
-            <textarea id="memo-input" placeholder="Enter your thoughts..."></textarea>
-            <button onclick="submitMemo()">Add Memo</button>
+            <textarea id="memo-input" placeholder="Voice input will appear here..." readonly></textarea>
+            <button onclick="startVoiceInput()">🎤 Start Voice Input</button>
         </div>
     </div>
 
@@ -26,6 +26,11 @@
         </div>
     </div>
 
+    <div class="circle-container">
+        <div class="circle circle-1" onclick="navigateTo('index.html')">1</div>
+        <div class="circle circle-2" onclick="navigateTo('roulette.html')">2</div>
+    </div>
+    
     <script src="./gamification_script.js"></script>
 </body>
 </html>
