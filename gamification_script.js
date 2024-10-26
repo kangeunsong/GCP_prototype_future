@@ -34,6 +34,10 @@ function startVoiceRecognition() {
     recognition.onresult = (event) => {
         const voiceInput = event.results[0][0].transcript;
         const memoInput = document.getElementById("memo-input");
+
+        // Log the recognized text to the console
+        console.log("Voice Input Recognized:", voiceInput);
+        
         memoInput.value = voiceInput;
         submitMemo(); // Automatically submit the memo after voice input
     };
