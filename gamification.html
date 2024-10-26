@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamification - Fish Escape</title>
+    <link rel="stylesheet" href="./css/gamification_style.css">
+</head>
+<body>
+    <p id="title">Let's talk about your dreams!</p>
+    <div class="container">
+        <div class="fishbowl">
+            <div class="water" id="water-level"></div>
+            <img src="./images/fish.png" alt="Fish" id="fish">
+        </div>
+        <div class="memo-section">
+            <textarea id="memo-input" placeholder="Enter your thoughts..."></textarea>
+            <button onclick="submitMemo()">Add Memo</button>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Congratulations! The fish has escaped!</p>
+        </div>
+    </div>
+
+    <script src="./gamification_script.js"></script>
+</body>
+</html>

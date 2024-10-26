@@ -58,9 +58,8 @@ function showPopup(topic) {
         </div>
     `;
 
-    // 화면 어디든 클릭하면 gamification.html로 이동
     popup.addEventListener("click", () => {
-        window.location.href = 'gamification.html';
+        window.location.href = `gamification.html?topic=${topic}`;
     });
 
     document.body.appendChild(popup);
