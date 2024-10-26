@@ -4,41 +4,41 @@ const maxWaterLevel = 90;
 const waterIncrement = 25;
 const fishRiseSpeed = 25;
 
+// This function now only updates the topic title on page load
 window.onload = function () {
     const params = new URLSearchParams(window.location.search);
     const selectedTopic = params.get("topic") || "future";
-
     const titleElement = document.getElementById("title");
     titleElement.textContent = `Let's talk about your ${selectedTopic}!`;
-
-    // Start voice recognition when the page loads
-    startVoiceRecognition();
 };
 
-let recognition;
+let recognition; // Declare recognition globally for reuse
 
 function startVoiceRecognition() {
-    const memoInput = document.getElementById("memo-input");
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Your browser does not support Speech Recognition.");
+        return;
+    }
 
-    // 음성 인식 객체 초기화
+    // Initialize Speech Recognition only when the button is clicked
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     recognition = new window.SpeechRecognition();
     recognition.lang = "en-US";
-    recognition.interimResults = false; // 확정된 결과만 받음
+    recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
+    // Start voice recognition
     recognition.start();
 
-    // 음성 인식 결과를 텍스트로 변환
+    // Display voice input in the memo area
     recognition.onresult = (event) => {
         const voiceInput = event.results[0][0].transcript;
-        console.log("Voice Input:", voiceInput);
-
-        // 변환된 텍스트를 메모 입력 창에 출력
+        const memoInput = document.getElementById("memo-input");
         memoInput.value = voiceInput;
-        submitMemo(); // 음성 입력 후 메모 제출
+        submitMemo(); // Automatically submit the memo after voice input
     };
 
+    // Handle errors in voice recognition
     recognition.onerror = (event) => {
         console.error("Voice recognition error:", event.error);
         alert("Voice recognition failed. Please try again.");
@@ -49,39 +49,12 @@ function startVoiceRecognition() {
     };
 }
 
-function startVoiceInput() {
-    if (!('webkitSpeechRecognition' in window)) {
-        alert("Your browser does not support Speech Recognition.");
-        return;
-    }
-
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = 'en-US'; // 사용할 언어 설정
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    recognition.onstart = () => {
-        console.log("Voice recognition started.");
-    };
-
-    recognition.onresult = (event) => {
-        const memoInput = document.getElementById("memo-input");
-        const transcript = event.results[0][0].transcript;
-        memoInput.value = transcript;
-        console.log("Voice input received:", transcript);
-        submitMemo(); // 텍스트가 감지되면 자동으로 메모 추가
-    };
-
-    recognition.onerror = (event) => {
-        console.error("Voice recognition error:", event.error);
-    };
-
-    recognition.onend = () => {
-        console.log("Voice recognition ended.");
-    };
-
-    recognition.start();
+// Navigate to other pages
+function navigateTo(page) {
+    window.location.href = page;
 }
+
+// Submit memo and update water/fish position
 function submitMemo() {
     const memoInput = document.getElementById("memo-input");
 
@@ -94,10 +67,10 @@ function submitMemo() {
         water.style.height = `${waterLevel}%`;
         fish.style.bottom = `${fishPosition}px`;
 
-        // 입력 창 초기화
+        // Clear memo input
         memoInput.value = "";
 
-        // 물고기 탈출 확인
+        // Show popup if the fish escapes
         if (waterLevel >= maxWaterLevel) {
             showPopup();
         }
@@ -108,12 +81,14 @@ function showPopup() {
     const popup = document.getElementById("popup");
     popup.style.display = "flex";
 
+    // Close popup and reset game on click
     popup.addEventListener("click", () => {
         popup.style.display = "none";
         resetGame();
     });
 }
 
+// Reset game for replayability
 function resetGame() {
     waterLevel = 20;
     fishPosition = 20;
